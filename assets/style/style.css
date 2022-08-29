@@ -26,7 +26,7 @@ h1 {
 .subtread-divider {
     display: block;
     border: 0;
-    height: 2px;
+    height: 1px;
     /* color: #261c15; */
     background-image: linear-gradient(to right, rgba(247, 247, 242, 0), rgba(38, 28, 21, 0.5), rgba(247, 247, 242, 0));
 }
@@ -73,8 +73,12 @@ h1 {
 
 .subtread-logo i {
     font-size: 35px;
-    color: #f05d23;
+    color: #261c15;
 }
+
+/* header */
+
+
 
 /* media queries */
 
