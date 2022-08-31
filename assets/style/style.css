@@ -27,7 +27,6 @@ h1 {
     display: block;
     border: 0;
     height: 1px;
-    /* color: #261c15; */
     background-image: linear-gradient(to right, rgba(247, 247, 242, 0), rgba(38, 28, 21, 0.5), rgba(247, 247, 242, 0));
 }
 
@@ -76,9 +75,72 @@ h1 {
     color: #261c15;
 }
 
+
 /* header */
 
+header {
+    margin-inline: 10px;
+}
 
+.navbar {
+    display: flex;
+    align-items: center;
+    margin: 35px;
+}
+
+.navigation {
+    background-color: #eae6c3;
+    border: solid #c5d86d 2px;
+    padding: 20px;
+    width: 65%;
+    display: inline-block;
+    border-radius: 5%;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-item a {
+    float: right;
+    display: block;
+    text-align: center;
+    margin-inline: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.nav-item a:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+.close-icon i {
+    font-size: 60px;
+    float: left;
+    cursor: pointer;
+    color: #c5d86d;
+}
+
+.hide-nav {
+    display: none;
+}
+
+.bar-icon {
+    font-size: 60px;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #c5d86d;
+}
+
+.brand {
+    font-size: 60px;
+    display: inline-block;
+    padding: 20px;
+}
 
 /* media queries */
 
@@ -87,8 +149,8 @@ h1 {
 @media screen and (max-width: 460px) {
 
     .container {
-        margin: 10px;
-        padding: 10px;
+        margin: 20px;
+        padding: 20px;
     }
 
     .subtread-row {
@@ -101,6 +163,8 @@ h1 {
         font-size: 12px;
     }
 }
+
+
 
 /* table devices */
 @media screen and (min-width: 460px) and (max-width: 1024px) {
