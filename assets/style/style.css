@@ -90,7 +90,6 @@ header {
 
 .navigation {
     background-color: #eae6c3;
-    /* border: solid #c5d86d 2px; */
     padding: 20px;
     width: 65%;
     display: inline-block;
@@ -141,6 +140,45 @@ header {
     display: inline-block;
     padding: 20px;
 }
+
+
+/* search bar */
+
+.search-bar {
+    margin-top: 20px;
+    margin: 40px;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: right;
+    border: solid 1px #c5d86d;
+    box-shadow: 1px 2px 3px #c5d86d;
+}
+
+.search-bar select {
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+.search-bar input {
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+.search-bar button {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+.search-bar button:hover {
+    background-color: #eae6c3;
+    box-shadow: 1px 2px 3px #fff;
+}
+    
 
 /* media queries */
 
