@@ -178,7 +178,7 @@ header {
     background-color: #eae6c3;
     box-shadow: 1px 2px 3px #fff;
 }
-    
+
 
 /* media queries */
 
@@ -240,13 +240,28 @@ header {
     .brand {
         font-size: 20px;
     }
+
+    .search-bar select,
+    .search-bar input,
+    .search-bar button {
+        min-width: 250px;
+        margin: 5px;
+    }
 }
 
+/* iphone 12 pro */
 @media screen and (max-width: 390px) {
     .nav-item a {
         margin-inline: 2px;
         font-size: 8px;
         padding: 1px;
+    }
+
+    .search-bar select,
+    .search-bar input,
+    .search-bar button {
+        min-width: 220px;
+        margin: 5px;
     }
 }
 
