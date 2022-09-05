@@ -153,6 +153,8 @@ header {
     justify-content: right;
     border: solid 1px #c5d86d;
     box-shadow: 1px 2px 3px #c5d86d;
+    background: url("../images/search-bar.png");
+    
 }
 
 .search-bar select {
