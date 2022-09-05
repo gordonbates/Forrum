@@ -90,11 +90,11 @@ header {
 
 .navigation {
     background-color: #eae6c3;
-    border: solid #c5d86d 2px;
+    /* border: solid #c5d86d 2px; */
     padding: 20px;
     width: 65%;
     display: inline-block;
-    border-radius: 5%;
+    border-radius: 5px;
     max-height: 80px;
     margin-right: 10px;
 }
@@ -121,7 +121,7 @@ header {
     font-size: 60px;
     float: left;
     cursor: pointer;
-    color: #c5d86d;
+    color: #000000;
 }
 
 .hide-nav {
@@ -146,6 +146,24 @@ header {
 
 
 /* mobile devices */
+@media screen and (max-width: 790px) {
+    .nav-item a {
+        display: inline;
+        margin-inline: 3px;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 670px) {
+    .nav-item a {
+        margin-inline: 3px;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+}
+
 @media screen and (max-width: 460px) {
 
     .container {
@@ -172,13 +190,10 @@ header {
     }
 
     .nav-item a {
-        float: left;
-        display: inline;
-        margin-inline: 3px;
+        margin-inline: 2px;
         font-size: 10px;
-        padding: 5px;
+        padding: 1px;
     }
-
 
     .bar-icon {
         font-size: 30px;
@@ -189,7 +204,13 @@ header {
     }
 }
 
-
+@media screen and (max-width: 390px) {
+    .nav-item a {
+        margin-inline: 2px;
+        font-size: 8px;
+        padding: 1px;
+    }
+}
 
 /* table devices */
 @media screen and (min-width: 460px) and (max-width: 1024px) {
