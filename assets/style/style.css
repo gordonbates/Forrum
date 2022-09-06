@@ -96,6 +96,8 @@ header {
     border-radius: 5px;
     max-height: 80px;
     margin-right: 10px;
+    border: solid 1px #c5d86d;
+    box-shadow: 1px 2px 3px #c5d86d;
 }
 
 .nav-item {
@@ -202,7 +204,7 @@ header {
 
 .forum-stats {
     background-color: #eae6c3;
-    margin: 40px;
+    margin: 45px;
     padding: 20px;
     border-radius: 5px;
     border: solid 1px #c5d86d;
