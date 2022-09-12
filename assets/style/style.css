@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
-/* global */
+/* ******************************* */
+/* ************************ Global */
 
 * {
     box-sizing: border-box;
@@ -15,7 +16,7 @@ html {
 a {
     font-weight: bolder;
     text-decoration: none;
-    color: #f05d23
+    color: #f05d23;
 }
 
 h1 {
@@ -30,7 +31,19 @@ h1 {
     background-image: linear-gradient(to right, rgba(247, 247, 242, 0), rgba(38, 28, 21, 0.5), rgba(247, 247, 242, 0));
 }
 
-/* index.html */
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: #f7f7f2;
+    background-color: #261c15;
+}
+
+
+/* ******************************* */
+/* ************************ home.html */
 
 .container {
     margin: 20px;
@@ -76,7 +89,7 @@ h1 {
 }
 
 
-/* header */
+/* ************************ Header */
 
 header {
     margin-inline: 10px;
@@ -119,7 +132,7 @@ header {
 }
 
 .nav-item a:hover {
-    background-color: rgb(0, 0, 0, 0.1);
+    color: #f05d23;
 }
 
 .close-icon i {
@@ -148,7 +161,7 @@ header {
 }
 
 
-/* Forrum Stats */
+/* ************************ Forrum Stats */
 
 .forum-stats {
     background-color: #eae6c3;
@@ -164,7 +177,7 @@ header {
 }
 
 
-/* search bar */
+/* ************************ Search bar */
 
 .search-bar {
     margin-top: 20px;
@@ -199,24 +212,83 @@ header {
     cursor: pointer;
 }
 
+/* ******************************* */
+/* ************************ threads.html */
 
-/* Footer */
+.table-head {
+    display: flex;
+}
 
-footer {
-    margin-top: 20px;
-    padding: 20px;
-    display: block;
-    text-align: center;
+.table-head div {
+    padding: 5px;
+    margin: 2px;
+    background-color: #c5d86d;
+    font-weight: bold;
     border-radius: 5px;
-    color: #f7f7f2;
-    background-color: #261c15;
+    cursor: pointer;
+}
+
+.table-head .status {
+    flex: 5%;
+}
+
+.table-head .subjects {
+    flex: 70%;
+}
+
+.table-head .replies {
+    flex: 10%;
+}
+
+.table-head .last-post {
+    flex: 15%;
+}
+
+/* ************************ Table body */
+.table-row {
+    display: flex;
+}
+
+.table-head div {
+    padding: 5px;
+    margin: 2px;
+}
+
+.table-row .status,
+.table-row .subjects,
+.table-row .replies,
+.table-row .last-post {
+    padding: 5px;
+    margin: 2px;
+    background-color: #eae6c3;
+    border-radius: 5px;
+}
+
+.table-row .status {
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.table-row .subjects {
+    flex: 70%;
+}
+
+.table-row .replies {
+    flex: 10%;
+}
+
+.table-row .last-post {
+    flex: 15%;
 }
 
 
-/* media queries */
 
 
-/* mobile devices */
+/* ******************************* */
+/* ************************ Media Queries */
+
+/* ************************ Mobile devices */
 @media screen and (max-width: 790px) {
     .nav-item a {
         display: inline;
@@ -282,7 +354,8 @@ footer {
     }
 }
 
-/* iphone 12 pro */
+
+/* ************************ iphone 12 pro */
 @media screen and (max-width: 390px) {
     .nav-item a {
         margin-inline: 2px;
@@ -298,7 +371,7 @@ footer {
     }
 }
 
-/* table devices */
+/* ************************ table devices */
 @media screen and (min-width: 460px) and (max-width: 1024px) {
     .container {
         margin: 15px;
