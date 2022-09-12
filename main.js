@@ -21,11 +21,11 @@ document.getElementsByTagName('footer')[0].innerHTML = date;
 //Comment
 function showComment(){
     var commentArea = document.getElementById("comment-section");
-    commentArea.classList.remove("style", "display:block;");
+    commentArea.classList.remove("hide");
 }
 
 //Reply
 function showReply(){
     var replyArea = document.getElementById("reply-section");
-    replyArea.classList.remove("style", "display:block;");
+    replyArea.classList.remove("hide");
 }
