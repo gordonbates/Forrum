@@ -12,3 +12,8 @@ function showIconBar(){
     iconBar.setAttribute("style", "display:block;");
     navigation.classList.add("hide-nav");
 }
+
+// dynamic Date
+var year = new Date().getFullYear();
+var date = `&copy; &nbsp;Forrum ${year} | All Rights Reserved.`
+document.getElementsByTagName('footer')[0].innerHTML = date;
