@@ -64,7 +64,7 @@
         <div class="navigate">
             <span><a href="">Forrum - Forums</a> >> <a href="">Random Thread</a> >> <a href="">Random Topic</a></span>
         </div>
-
+        <!-- Comment Section -->
         <div class="thread-container">
             <div class="head">
                 <div class="author">Author</div>
@@ -89,10 +89,15 @@
                     <hr>
                     Regards Username
                     <div class="comment">
-                        <button>Comment</button>
+                        <button onclick="showComment()">Comment</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Comment Input -->
+        <div class="comment-section hide" id="comment-section">
+            <textarea name="comment" id="" placeholder="...what are your thoughts?"></textarea>
+            <input type="submit" value="Reply">
         </div>
 
     </div>

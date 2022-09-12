@@ -40,7 +40,11 @@ footer {
     border-radius: 5px;
     color: #eae6c3;
     background-color: #261c15;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
 }
+
 
 
 /* ******************************* */
@@ -394,6 +398,36 @@ header {
     color: #261c15;
     box-shadow: 1px 2px 3px #63666A;
 }
+
+/* ************************ Comment Section */
+
+.comment-section {
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.comment-section textarea {
+    border-radius: 5px;
+    width: 100%;
+    min-height: 100px;
+    padding: 5px;
+    background-color: #eae6c3;
+}
+
+.comment-section input {
+    margin: 5px;
+    border: none;
+    float: right;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+.comment-section input:hover {
+    border: solid 1px #261c15;
+}
+
 
 /* ******************************* */
 /* ************************ Media Queries */
