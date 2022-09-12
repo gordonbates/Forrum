@@ -85,8 +85,11 @@ header {
 .navbar {
     display: flex;
     align-items: center;
-    margin: 40px;
+    border-radius: 5px;
+    /* margin: 40px; */
     position: relative;
+    color: #eae6c3;
+    background-color: #261c15;
 }
 
 .navigation {
@@ -133,16 +136,17 @@ header {
 .bar-icon {
     font-size: 60px;
     display: inline-block;
-    margin-top: 10px;
+    margin: 20px;
+    /* margin-top: 10px; */
     cursor: pointer;
-    color: #c5d86d;
+    color: #eae6c3;
 }
 
 .brand {
     font-size: 60px;
     display: inline-block;
-    padding: 25px;
-    margin-top: 10px;
+    /* padding: 25px; */
+    /* margin-top: 10px; */
 }
 
 
