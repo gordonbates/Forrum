@@ -86,7 +86,6 @@ header {
     display: flex;
     align-items: center;
     border-radius: 5px;
-    /* margin: 40px; */
     position: relative;
     color: #eae6c3;
     background-color: #261c15;
@@ -95,6 +94,7 @@ header {
 .navigation {
     background-color: #eae6c3;
     padding: 20px;
+    margin: 18px;
     width: 65%;
     display: inline-block;
     border-radius: 5px;
@@ -114,8 +114,8 @@ header {
     text-align: center;
     margin-inline: 20px;
     padding: 10px;
-    font-size: 20px;
-    color: #000000;
+    font-size: 25px;
+    color: #261c15;
 }
 
 .nav-item a:hover {
@@ -126,7 +126,7 @@ header {
     font-size: 60px;
     float: left;
     cursor: pointer;
-    color: #000000;
+    color: #261c15;
 }
 
 .hide-nav {
@@ -137,16 +137,30 @@ header {
     font-size: 60px;
     display: inline-block;
     margin: 20px;
-    /* margin-top: 10px; */
     cursor: pointer;
     color: #eae6c3;
 }
 
 .brand {
+    margin: 20px;
     font-size: 60px;
     display: inline-block;
-    /* padding: 25px; */
-    /* margin-top: 10px; */
+}
+
+
+/* Forrum Stats */
+
+.forum-stats {
+    background-color: #eae6c3;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 1px #c5d86d;
+    box-shadow: 1px 2px 3px #c5d86d;
+}
+
+.chart {
+    font-size: 20px;
 }
 
 
@@ -154,42 +168,22 @@ header {
 
 .search-bar {
     margin-top: 20px;
-    margin: 40px;
-    border-radius: 5px;
+    margin: 20px;
     padding: 20px;
     display: flex;
     justify-content: center;
-    border: solid 1px #c5d86d;
-    box-shadow: 1px 2px 3px #c5d86d;
-    position: relative;
-}
-
-/* this is used so i could apply opacity to the image only */
-.search-bar:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2;
-    /* background-image: url('../images/search-bar.png'); */
-    background-size: 40%;
 }
 
 .search-bar select {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 1px 2px 3px #63666A;
-    position: relative;
 }
 
 .search-bar input {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 1px 2px 3px #63666A;
-    position: relative;
 }
 
 .search-bar button {
@@ -197,27 +191,12 @@ header {
     padding: 10px;
     background-color: #fff;
     box-shadow: 1px 2px 3px #63666A;
-    position: relative;
 }
 
 .search-bar button:hover {
     background-color: #eae6c3;
     box-shadow: 1px 2px 3px #fff;
-}
-
-/* Forrum Stats */
-
-.forum-stats {
-    background-color: #eae6c3;
-    margin: 45px;
-    padding: 20px;
-    border-radius: 5px;
-    border: solid 1px #c5d86d;
-    box-shadow: 1px 2px 3px #c5d86d; 
-}
-
-.chart {
-    font-size: 20px;
+    cursor: pointer;
 }
 
 
