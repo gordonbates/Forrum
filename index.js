@@ -23,3 +23,9 @@ function showComment(){
     var commentArea = document.getElementById("comment-section");
     commentArea.classList.remove("style", "display:block;");
 }
+
+//Reply
+function showReply(){
+    var replyArea = document.getElementById("reply-section");
+    replyArea.classList.remove("style", "display:block;");
+}

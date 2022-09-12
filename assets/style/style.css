@@ -428,6 +428,10 @@ header {
     border: solid 1px #261c15;
 }
 
+.comments-container {
+    margin-top: 40px;
+}
+
 
 /* ******************************* */
 /* ************************ Media Queries */
