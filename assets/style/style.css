@@ -114,7 +114,6 @@ header {
     max-height: 80px;
     margin-right: 10px;
     border: solid 1px #c5d86d;
-    box-shadow: 1px 2px 3px #c5d86d;
 }
 
 .nav-item {
@@ -189,19 +188,22 @@ header {
 
 .search-bar select {
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 1px 2px 3px #63666A;
+    font-size: 20px;
 }
 
 .search-bar input {
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 1px 2px 3px #63666A;
+    font-size: 20px;
 }
 
 .search-bar button {
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
+    font-size: 20px;
     background-color: #fff;
     box-shadow: 1px 2px 3px #63666A;
 }
@@ -318,6 +320,35 @@ header {
     font-weight: bolder;
     cursor: pointer;
 }
+
+
+/* ************************ Note */
+
+.note {
+    background-color: #eae6c3;
+    padding: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    display: block;
+    border-radius: 5px;
+    border: solid 1px #c5d86d;
+    box-shadow: 1px 2px 3px #c5d86d;
+}
+
+.note span {
+    font-size: 20px;
+    margin-block: 5px;
+}
+
+/* .forum-stats {
+    background-color: #eae6c3;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 1px #c5d86d;
+    box-shadow: 1px 2px 3px #c5d86d;
+} */
+
 
 
 /* ******************************* */
