@@ -244,6 +244,7 @@ header {
     flex: 15%;
 }
 
+
 /* ************************ Table body */
 .table-row {
     display: flex;
@@ -283,6 +284,40 @@ header {
 }
 
 
+/* ************************ Pagination */
+
+.pagination {
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.pagination a {
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+.pagination a:hover {
+    background-color: #eae6c3;
+    box-shadow: 1px 2px 3px #fff;
+    cursor: pointer;
+}
+
+/* ************************ Navigate */
+
+.navigate {
+    margin-block-end: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.navigate a:hover {
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+}
 
 
 /* ******************************* */
