@@ -6,4 +6,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('rooms/', rooms, name='rooms'),
     path('threads/', threads, name='threads'),
+    path('tinymce/', include('tinymce.urls')),
+    path('hitcount/', include('hitcount.urls', namespace='hitcount')),
 ]
