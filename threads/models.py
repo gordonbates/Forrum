@@ -9,9 +9,10 @@ from taggit.managers import TaggableManager
 
 User = get_user_model()
 
+
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    fullname = models.CharField(max_length=400, blank=True)
+    fullname = models.CharField(max_length=40, blank=True)
     slug = models.SlugField(max_length=400, unique=True, blank=True)
     bio = HTMLField()
     points = models.IntegerField(default=0)
@@ -25,20 +26,22 @@ class Author(models.Model):
             self.slug = slugify(self.fullname)
         super(Post, self).save(*args, **kwargs)
 
+
 class Category(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=400, unique=True, blank=True)
 
     class Meta:
         verbose_name_plural = "categories"
+
     def __str__(self):
         return self.title
-
 
     def save(self):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
 
 class Post(models.Model):
     title = models.CharField(max_length=400)
@@ -50,7 +53,7 @@ class Post(models.Model):
     approved = models.BooleanField(default=False)
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
         related_query_name='hit_count_generic_relation'
-    )
+        )
     tags = TaggableManager()
 
     def save(self):
