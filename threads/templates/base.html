@@ -20,14 +20,14 @@
             <nav class="navigation hide-nav" id="navigation">
                 <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="rooms.html">Rooms</a></li>
-                    <li class="nav-item"><a href="threads.html">Threads</a></li>
+                    <li class="nav-item"><a href="{% url 'rooms' %}">Rooms</a></li>
+                    <li class="nav-item"><a href="{% url 'threads' %}">Threads</a></li>
                     <li class="nav-item"><a href="profile.html">Profile</a></li>
                 </ul>
             </nav>
             <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
             <div class="brand">
-                <a href="home.html" style="color: #eae6c3;">Forrum</a>
+                <a href="{% url 'home' %}" style="color: #eae6c3;">Forrum</a>
             </div>
         </div>
 
@@ -57,124 +57,15 @@
         </div>
 
     </header>
-
-    <div class="container">
-        <div class="subtread">
-            <div class="subtread-title">
-                <h1>Room</h1>
-            </div>
-            <div class="subtread-row">
-                <div class="subtread-logo subtread-column center-icon">
-                    <i class="fab fa-rocketchat"></i>
-                </div>
-                <div class="subtread-discription subtread-column">
-                    <h1><a href="">Description Title</a></h1>
-                    <p>Description Content: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div>
-                <div class="subtread-stats subtread-column center-icon">
-                    <span>12 Posts | 15 Topics</span>
-                </div>
-                <div class="subtread-info subtread-column">
-                    <a href="">Last Post</a> by <a href="">SiteUser</a>
-                    <br>
-                    0n <small>01 Jan 2022</small>
-                </div>
-            </div>
-        </div>
-        <!-- more -->
-        <div class="subtread">
-            <div class="subtread-title">
-                <h1>Room</h1>
-            </div>
-            <div class="subtread-row">
-                <div class="subtread-logo subtread-column center-icon">
-                    <i class="fab fa-rocketchat"></i>
-                </div>
-                <div class="subtread-discription subtread-column">
-                    <h1><a href="">Description Title</a></h1>
-                    <p>Description Content: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div>
-                <div class="subtread-stats subtread-column center-icon">
-                    <span>12 Posts | 15 Topics</span>
-                </div>
-                <div class="subtread-info subtread-column">
-                    <a href="">Last Post</a> by <a href="">SiteUser</a>
-                    <br>
-                    0n <small>01 Jan 2022</small>
-                </div>
-            </div>
-            <hr class="subtread-divider">
-            <div class="subtread-row">
-                <div class="subtread-logo subtread-column center-icon">
-                    <i class="fab fa-rocketchat"></i>
-                </div>
-                <div class="subtread-discription subtread-column">
-                    <h1><a href="">Description Title</a></h1>
-                    <p>Description Content: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div>
-                <div class="subtread-stats subtread-column center-icon">
-                    <span>12 Posts | 15 Topics</span>
-                </div>
-                <div class="subtread-info subtread-column">
-                    <a href="">Last Post</a> by <a href="">SiteUser</a>
-                    <br>
-                    0n <small>01 Jan 2022</small>
-                </div>
-            </div>
-            <hr class="subtread-divider">
-            <div class="subtread-row">
-                <div class="subtread-logo subtread-column center-icon">
-                    <i class="fab fa-rocketchat"></i>
-                </div>
-                <div class="subtread-discription subtread-column">
-                    <h1><a href="">Description Title</a></h1>
-                    <p>Description Content: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div>
-                <div class="subtread-stats subtread-column center-icon">
-                    <span>12 Posts | 15 Topics</span>
-                </div>
-                <div class="subtread-info subtread-column">
-                    <a href="">Last Post</a> by <a href="">SiteUser</a>
-                    <br>
-                    0n <small>01 Jan 2022</small>
-                </div>
-            </div>
-        </div>
-        <!-- more -->
-        <div class="subtread">
-            <div class="subtread-title">
-                <h1>Room</h1>
-            </div>
-            <div class="subtread-row">
-                <div class="subtread-logo subtread-column center-icon">
-                    <i class="fab fa-rocketchat"></i>
-                </div>
-                <div class="subtread-discription subtread-column">
-                    <h1><a href="">Description Title</a></h1>
-                    <p>Description Content: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div>
-                <div class="subtread-stats subtread-column center-icon">
-                    <span>12 Posts | 15 Topics</span>
-                </div>
-                <div class="subtread-info subtread-column">
-                    <a href="">Last Post</a> by <a href="">SiteUser</a>
-                    <br>
-                    0n <small>01 Jan 2022</small>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% block content %}
+    {% endblock content %}
+    
+    
     <footer>
         <span>&copy; &nbsp;Forrum | All Rights Reserved.</span>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="/static/main.js"></script>
 </body>
 
 </html>

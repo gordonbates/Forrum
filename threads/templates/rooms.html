@@ -1,61 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forrum</title>
-    <link rel="stylesheet" href="assets/style/style.css">
-    <script src="https://kit.fontawesome.com/c7dbda0798.js"></script>
-
-</head>
-
-<header>
-
-    <body>
-        <!--NavBar Section-->
-        <div class="navbar">
-            <nav class="navigation hide-nav" id="navigation">
-                <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="rooms.html">Rooms</a></li>
-                    <li class="nav-item"><a href="threads.html">Threads</a></li>
-                    <li class="nav-item"><a href="profile.html">Profile</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
-            <div class="brand home-button">
-                <a href="home.html" style="color: #eae6c3;">Forrum</a>
-            </div>
-        </div>
-
-
-
-        <!-- Forrum Stats -->
-        <div class="forum-stats">
-            <div class="chart">
-                Forrum - Stats &nbsp;<i class="fas fa-chart-bar"></i>
-            </div>
-            <span><u>5,369</u> Posts in <u>48</u> Topics by <u>8,124</u> Members.</span><br>
-            <span>Latest post: <b><a href="">Random post</a></b> on 01 Jan 2022 By <a href="">SiteUser</a></span>.<br>
-            <span>Check <a href="">the latest posts</a> .</span><br>
-        </div>
-
-        <!-- Search Bar Section -->
-        <div class="search-bar">
-            <div>
-                <select name="" id="">
-                    <option value="all">All</option>
-                    <option value="threads">Treads</option>
-                    <option value="description">Description</option>
-                </select>
-                <input type="text" name="" id="" placeholder="Search Forrum...">
-                <button><i class="fas fa-search"></i></i></button>
-            </div>
-        </div>
-
-</header>
+{% block content %}
 
 <div class="container">
 
@@ -74,7 +19,7 @@
             <div class="author">
                 <div class="username"><a href="#">Username</a></div>
                 <div>Role</div>
-                <img src="assets/images/avatar.png" alt="avatar">
+                <img src="{{ MEDIA_URL }}avatar.png" alt="avatar">
                 <div>Posts: <u>40</u></div>
                 <div>Points: <u>1232</u></div>
             </div>
@@ -110,7 +55,7 @@
             <div class="author">
                 <div class="AnotherUser"><a href="#">Username</a></div>
                 <div>Role</div>
-                <img src="assets/images/avatar.png" alt="avatar">
+                <img src="{{ MEDIA_URL }}avatar.png" alt="avatar">
                 <div>Posts: <u>40</u></div>
                 <div>Points: <u>1232</u></div>
             </div>
@@ -137,11 +82,4 @@
 
 </div>
 
-<footer>
-    <span>&copy; &nbsp;Forrum | All Rights Reserved.</span>
-</footer>
-
-<script src="main.js"></script>
-</body>
-
-</html>
+{% endblock content %}

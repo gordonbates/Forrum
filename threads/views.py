@@ -5,9 +5,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def index(request):
-    context = {
-        'test': 'Hello',
-        'posts': [1, 2, 3]
-    }
-    return render(request, 'home.html', context)
+def home(request):
+    return render(request, 'home.html',)
+
+
+def rooms(request):
+    return render(request, 'rooms.html',)
+
+
+def threads(request):
+    return render(request, 'threads.html',)
