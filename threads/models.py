@@ -21,10 +21,10 @@ class Author(models.Model):
     def __str__(self):
         return self.fullname
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.fullname)
-        super(Post, self).save(*args, **kwargs)
+        super(Author, self).save(*args, **kwargs)
 
 
 class Category(models.Model):
@@ -33,14 +33,14 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "categories"
-
     def __str__(self):
         return self.title
 
-    def save(self):
+
+    def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs)
+        super(Category, self).save(*args, **kwargs)
 
 
 class Post(models.Model):
@@ -53,10 +53,10 @@ class Post(models.Model):
     approved = models.BooleanField(default=False)
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
         related_query_name='hit_count_generic_relation'
-        )
+    )
     tags = TaggableManager()
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
