@@ -1,37 +1,34 @@
 {% extends 'base.html' %}
-
+{% load hitcount_tags %}
 {% block content %}
 
 <div class="container">
 
     <!-- Navigation -->
     <div class="navigate">
-        <span><a href="#">Forrum - Forums</a> >> <a href="">Random Thread</a> >> <a href="">Random Topic</a></span>
+        <span><a href="#">Forrum - Forums</a> >> >> <a
+                href="{{post.categories.all.0.get_url}}">{{post.categories.all.0}}</a> >> <a
+                href="{{post.get_url}}">{{post.title}}</a></span>
     </div>
-    <!-- Comment Section -->
+    <!-- Topic Section -->
     <div class="thread-container">
         <div class="head">
             <div class="author">Author</div>
-            <div class="content">Topic: Post's Tiltle (Read 1232 Times)</div>
+            <div class="content">Topic: {{post.title}} (Read {% get_hit_count for post %} Times)</div>
         </div>
 
         <div class="body">
             <div class="author">
-                <div class="username"><a href="#">Username</a></div>
+                <div class="username"><a href="">{{post.user.fullname|title}}</a></div>
                 <div>Role</div>
-                <img src="{{ MEDIA_URL }}avatar.png" alt="avatar">
-                <div>Posts: <u>40</u></div>
-                <div>Points: <u>1232</u></div>
+                <img src="{{post.user.profile_pic.url}}" alt="profile picture">
+                <div>Posts: <u>{{post.user.num_posts}}</u></div>
+                <div>Points: <u>{{post.user.points}}</u></div>
             </div>
 
             <div class="content">
-                Just random placeholder text for a post in a room.
-                <br>To see what it looks like.
-                <br><br>
-                Nothing else ...
-                <br><br>
-                <hr>
-                Regards Username
+                {{post.content|safe}}
+                <br>
                 <div class="comment">
                     <button onclick="showComment()">Comment</button>
                 </div>
@@ -39,47 +36,84 @@
         </div>
     </div>
 
-    <!-- Show Comments -->
-    <div class="comment-section hide" id="comment-section">
-        <textarea name="comment" id="" placeholder="...what are your thoughts?"></textarea>
-        <input type="submit" value="Comment">
+    <!--Comment Input-->
+    {% if post.closed == True %}
+    <div style="background-color:#fff;color:#000;font-weight:bolder;padding:20px;width:100%;"> This Topic Is Closed!
     </div>
+    {% else %}
+    {% if request.user.is_authenticated %}
+    <form action="." method="post">
+        {% csrf_token %}
+        <div class="comment-section hide" id="comment-section">
+            <textarea name="comment" id="" placeholder="...what are your thoughts?"></textarea>
+            <input type="submit" value="Comment" name="comment-form">
+        </div>
+    </form>
 
+    {% else %}
+    <div style="background-color:#fff;color:#000;font-weight:bolder;padding:20px;width:100%;"> You need to <a
+            href="{% url 'signin' %}"><b>login</b></a> to comment or reply! </div>
+
+    {% endif %}
+
+    {% endif %}
+
+    <!-- Comments Section -->
     <div class="comments-container">
-        <div class="head">
+        <!-- <div class="head">
             <div class="author">Author</div>
             <div class="content">Comments</div>
-        </div>
+        </div> -->
 
         <div class="body">
             <div class="author">
-                <div class="AnotherUser"><a href="#">Username</a></div>
+                <div class="username"><a href="">{{comment.user.fullname|title}}</a></div>
                 <div>Role</div>
-                <img src="{{ MEDIA_URL }}avatar.png" alt="avatar">
-                <div>Posts: <u>40</u></div>
-                <div>Points: <u>1232</u></div>
+                <img src="{{comment.user.profile_pic.url}}" alt="">
+                <div>Posts: <u>{{comment.user.num_posts}}</u></div>
+                <div>Points: <u>{{comment.user.points}}</u></div>
             </div>
 
             <div class="content">
-                Just random comment for a post in a room.
-                <br>To see what it looks like.
-                <br><br>
-                Nothing else ...
-                <br><br>
-
+                {{comment.content}}
+                <br>
+                {% if request.user.is_authenticted %}
                 <div class="comment">
-                    <button onclick="showReply()">Reply</button>
+                    <button onclick="showReplies('comment{{comment.id}}')">Reply</button>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
 
-    <!-- Reply input -->
-    <div class="comment-section hide" id="reply-section">
-        <textarea name="reply" id="" placeholder="...reply"></textarea>
-        <input type="submit" value="Reply">
+    <!--Reply Area-->
+    <form action="." method="post">
+        {% csrf_token %}
+        <div class="comment-section hide" id="comment{{comment.id}}">
+            <textarea name="reply" id="" placeholder="...reply"></textarea>
+            <input type="submit" value="Reply" name="reply-form">
+            <input type="hidden" name="comment-id" value="{{comment.id}}">
+        </div>
+    </form>
+
+    <!--Reply Section-->
+    {% for reply in comment.replies.all %}
+    <div class="comments-container" style="width: 95%; margin-left:5%;">
+        <div class="body">
+            <div class="author">
+                <div class="username"><a href="">{{reply.user.fullname|title}}</a></div>
+                <div>Role</div>
+                <img src="{{reply.user.profile_pic.url}}" alt="">
+                <div>Posts: <u>{{reply.user.num_posts}}</u></div>
+                <div>Points: <u>{{reply.user.points}}</u></div>
+            </div>
+            <div class="content">
+                {{reply.content}}
+                <br>
+            </div>
+        </div>
     </div>
+    {% endfor %}
 
 </div>
-
 {% endblock content %}

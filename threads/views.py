@@ -1,4 +1,6 @@
 from django.shortcuts import render
+# from .models import Author, Category, Post
+from .utils import update_views
 
 # Create your views here.
 
@@ -10,6 +12,9 @@ def home(request):
 
 
 def rooms(request):
+    
+    update_views(request, object)
+
     return render(request, 'rooms.html',)
 
 
