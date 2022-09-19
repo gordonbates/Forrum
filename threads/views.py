@@ -1,22 +1,39 @@
-from django.shortcuts import render
-# from .models import Author, Category, Post
+from django.shortcuts import render, get_object_or_404
+from .models import Author, Category, Post
 from .utils import update_views
 
 # Create your views here.
 
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
 
 def home(request):
-    return render(request, 'home.html',)
-
-
-def rooms(request):
+    forums = Category.objects.all()
+    for forum in forums:
+        forum.post_count = Post.objects.filter(categories=forum.id).count()
     
-    update_views(request, object)
+    context = {
+        "forums": forums,
+    }
+    return render(request, 'home.html', context)
 
-    return render(request, 'rooms.html',)
+
+def rooms(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    context = {
+        "post": post
+    }
+    update_views(request, post)
+    return render(request, 'rooms.html', context,)
 
 
-def threads(request):
-    return render(request, 'threads.html',)
+def category(request, category_id):
+    category = get_object_or_404(Category, slug=category_id)
+    # posts = Post.objects.filter(approved=True, categories=category)
+    posts = category.posts.filter(approved=True)
+
+    context = {
+        "posts": posts,
+    }
+
+    return render(request, 'threads.html', context)

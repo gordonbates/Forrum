@@ -401,6 +401,10 @@ header {
 
 /* ************************ Comment Section */
 
+.hide {
+    display: none;
+}
+
 .comment-section {
     border-radius: 5px;
     margin-top: 10px;

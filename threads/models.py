@@ -6,6 +6,7 @@ from tinymce.models import HTMLField
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
 from taggit.managers import TaggableManager
+from django.shortcuts import reverse
 
 User = get_user_model()
 
@@ -19,13 +20,13 @@ class Author(models.Model):
     profile_pic = ResizedImageField(size=[50, 80], upload_to="authors", default=None, null=True, blank=True)
 
     def __str__(self):
-        return self.fullname
+        return str(self.fullname)
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.fullname)
         super(Author, self).save(*args, **kwargs)
-
+    
 
 class Category(models.Model):
     title = models.CharField(max_length=50)
@@ -35,7 +36,7 @@ class Category(models.Model):
         verbose_name_plural = "categories"
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
 
 def save(self, *args, **kwargs):
@@ -47,9 +48,9 @@ def save(self, *args, **kwargs):
 class Post(models.Model):
     title = models.CharField(max_length=400)
     slug = models.SlugField(max_length=400, unique=True, blank=True)
-    user = models.ForeignKey(Author, on_delete=models.CASCADE)
+    user = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="posts")
     content = HTMLField()
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(Category, related_name="posts")
     date = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     hit_count_generic = GenericRelation(
@@ -64,4 +65,9 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
+
+    def get_url(self):
+        return reverse("rooms", kwargs={
+            "slug": self.slug
+        })

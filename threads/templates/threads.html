@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load hitcount_tags %}
 {% block content %}
 
 <div class="container">
@@ -17,13 +17,14 @@
             <div class="last-post">Last Post</div>
         </div>
 
+        {% for post in posts %}
         <div class="table-row">
             <div class="status"><i class="fab fa-rocketchat"></i></div>
-            <div class="subjects"><a href="#">Is the iphone 14 a worthy upgrade from iphone 13?</a>
+            <div class="subjects"><a href="{{post.get_url}}">{{post.title}}</a>
                 <br>
-                <span>Started by <b><a href="#">SiteUser</a></b>.</span></div>
+                <span>Started by <b><a href="">{{post.user.fullname|title}}</a></b>.</span></div>
             <div class="replies">
-                2 replies <br>125 views
+                2 replies <br>{% get_hit_count for post %}
             </div>
             <div class="last-post">
                 on 01 Jan 2022
@@ -31,107 +32,14 @@
                 By <b><a href="#">SiteUser</a></b>
             </div>
         </div>
+        {% empty %}
+        Nothing yet
+        {% endfor %}
+
     </div>
     <hr class="subtread-divider">
 
-    <div class="posts-table">
-        <div class="table-head">
-            <div class="status">Status</div>
-            <div class="subjects">Subjects</div>
-            <div class="replies">Replies/Views</div>
-            <div class="last-post">Last Post</div>
-        </div>
-
-        <div class="table-row">
-            <div class="status"><i class="fab fa-rocketchat"></i></div>
-            <div class="subjects"><a href="#">Is the iphone 14 a worthy upgrade from iphone 13?</a>
-                <br>
-                <span>Started by <b><a href="#">SiteUser</a></b>.</span></div>
-            <div class="replies">
-                2 replies <br>125 views
-            </div>
-            <div class="last-post">
-                on 01 Jan 2022
-                <br>
-                By <b><a href="#">SiteUser</a></b>
-            </div>
-        </div>
-    </div>
-    <hr class="subtread-divider">
-
-    <div class="posts-table">
-        <div class="table-head">
-            <div class="status">Status</div>
-            <div class="subjects">Subjects</div>
-            <div class="replies">Replies/Views</div>
-            <div class="last-post">Last Post</div>
-        </div>
-
-        <div class="table-row">
-            <div class="status"><i class="fab fa-rocketchat"></i></div>
-            <div class="subjects"><a href="#">Is the iphone 14 a worthy upgrade from iphone 13?</a>
-                <br>
-                <span>Started by <b><a href="#">SiteUser</a></b>.</span></div>
-            <div class="replies">
-                2 replies <br>125 views
-            </div>
-            <div class="last-post">
-                on 01 Jan 2022
-                <br>
-                By <b><a href="#">SiteUser</a></b>
-            </div>
-        </div>
-    </div>
-    <hr class="subtread-divider">
-
-    <div class="posts-table">
-        <div class="table-head">
-            <div class="status">Status</div>
-            <div class="subjects">Subjects</div>
-            <div class="replies">Replies/Views</div>
-            <div class="last-post">Last Post</div>
-        </div>
-
-        <div class="table-row">
-            <div class="status"><i class="fab fa-rocketchat"></i></div>
-            <div class="subjects"><a href="#">Is the iphone 14 a worthy upgrade from iphone 13?</a>
-                <br>
-                <span>Started by <b><a href="#">SiteUser</a></b>.</span></div>
-            <div class="replies">
-                2 replies <br>125 views
-            </div>
-            <div class="last-post">
-                on 01 Jan 2022
-                <br>
-                By <b><a href="#">SiteUser</a></b>
-            </div>
-        </div>
-    </div>
-    <hr class="subtread-divider">
-
-    <div class="posts-table">
-        <div class="table-head">
-            <div class="status">Status</div>
-            <div class="subjects">Subjects</div>
-            <div class="replies">Replies/Views</div>
-            <div class="last-post">Last Post</div>
-        </div>
-
-        <div class="table-row">
-            <div class="status"><i class="fab fa-rocketchat"></i></div>
-            <div class="subjects"><a href="#">Is the iphone 14 a worthy upgrade from iphone 13?</a>
-                <br>
-                <span>Started by <b><a href="#">SiteUser</a></b>.</span></div>
-            <div class="replies">
-                2 replies <br>125 views
-            </div>
-            <div class="last-post">
-                on 01 Jan 2022
-                <br>
-                By <b><a href="#">SiteUser</a></b>
-            </div>
-        </div>
-    </div>
+</div>
 
 </div>
 
