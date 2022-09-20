@@ -53,8 +53,9 @@
     </form>
 
     {% else %}
-    <div style="background-color:#fff;color:#000;font-weight:bolder;padding:20px;width:100%;"> You need to <a
-            href="{% url 'signin' %}"><b>login</b></a> to comment or reply! </div>
+    
+    <div style="background-color:#eae6c3;border-radius: 5px;border: solid 1px #c5d86d; color:#000;font-weight:bolder;padding:20px;width:100%;"> You need to <a
+            href="{% url 'signup' %}"><b>login</b></a> to comment or reply! </div>
 
     {% endif %}
 

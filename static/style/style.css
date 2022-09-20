@@ -75,6 +75,8 @@ footer {
 .subtread-row {
     display: grid;
     grid-template-columns: 7% 60% 13% 20%;
+    border: 1px solid #eae6c3;
+    border-radius: 5px;
 }
 
 .subtread-column {
@@ -260,6 +262,8 @@ footer {
 
 .table-row {
     display: flex;
+    border: 1px solid #eae6c3;
+    border-radius: 5px;
 }
 
 .table-head div {
