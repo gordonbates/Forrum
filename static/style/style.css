@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0%;
+}
+
 html {
     font-family: Quicksand, sans-serif;
     font-size: 14px;
@@ -32,12 +36,10 @@ h1 {
 }
 
 footer {
-    margin-top: 20px;
     padding: 20px;
     display: block;
     font-size: 15px;
     text-align: center;
-    border-radius: 5px;
     color: #eae6c3;
     background-color: #261c15;
     bottom: 0;
@@ -52,7 +54,7 @@ footer {
 
 .container {
     margin: 20px;
-    padding: 20px;
+    padding: 15px;
 }
 
 .subtread {
@@ -93,17 +95,17 @@ footer {
     color: #261c15;
 }
 
+.sign-up {
+    border: 1px solid red;
+}
+
 
 /* ************************ Header */
 
-header {
-    margin-inline: 10px;
-}
-
 .navbar {
+    margin: 0%;
     display: flex;
     align-items: center;
-    border-radius: 5px;
     position: relative;
     color: #eae6c3;
     background-color: #261c15;
@@ -168,12 +170,11 @@ header {
 /* ************************ Forrum Stats */
 
 .forum-stats {
+    margin: 0%;
     background-color: #eae6c3;
-    margin-top: 20px;
     padding: 20px;
-    border-radius: 5px;
-    border: solid 1px #c5d86d;
-    box-shadow: 1px 2px 3px #c5d86d;
+    border: 1px solid #c5d86d;
+    /* box-shadow: 1px 2px 3px #c5d86d; */
 }
 
 .chart {
@@ -188,7 +189,7 @@ header {
     margin: 20px;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    margin-left: 35%
 }
 
 .search-bar select {
@@ -196,7 +197,7 @@ header {
     border-radius: 5px;
     padding: 5px;
     box-shadow: 1px 2px 3px #63666A;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .search-bar input {
@@ -204,14 +205,14 @@ header {
     border-radius: 5px;
     padding: 5px;
     box-shadow: 1px 2px 3px #63666A;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .search-bar button {
     border: none;
     border-radius: 5px;
     padding: 5px;
-    font-size: 20px;
+    font-size: 14px;
     background-color: #fff;
     box-shadow: 1px 2px 3px #63666A;
 }
@@ -256,6 +257,7 @@ header {
 
 
 /* ************************ Table body */
+
 .table-row {
     display: flex;
 }
@@ -410,6 +412,7 @@ header {
     border-radius: 50%;
 }
 
+
 /* ************************ Comment Section */
 
 .hide {
@@ -447,6 +450,37 @@ header {
     margin-top: 40px;
 }
 
+
+/* ******************************* */
+/* ************************ Register forms */
+
+.signup {
+    margin: 0%;
+    padding-top: 10px;
+    padding-left: 30%;
+    background-color: #eae6c3;
+    border: 1px solid #c5d86d;
+}
+
+input[type="password"i] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+input[type="text"i] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+input[type="submit"i] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #63666A;
+    background-color: #f7f7f2;
+    cursor: pointer;
+}
 
 /* ******************************* */
 /* ************************ Media Queries */

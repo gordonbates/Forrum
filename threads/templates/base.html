@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +23,8 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
-                    <li class="nav-item"><a href="{% url 'signin' %}">Signin</a></li>
-                    <li class="nav-item"><a href="{% url 'signup' %}">Signup</a></li>
+                    <li class="nav-item"><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li class="nav-item"><a href="{% url 'signin' %}">Log In</a></li>
                     {% endif %}
                     <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
                 </ul>
@@ -63,8 +63,8 @@
     </header>
     {% block content %}
     {% endblock content %}
-    
-    
+
+
     <footer>
         <span>&copy; &nbsp;Forrum | All Rights Reserved.</span>
     </footer>

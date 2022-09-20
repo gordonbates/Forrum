@@ -2,11 +2,13 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h1 style="text-align:center; margin-block:50px; color: #f05d23;">Create An Account</h1>
 
-<form method="post" action="" style="margin-left: 35%;margin-bottom: 50%;">{% csrf_token %}    
-    {{form|crispy}}
-    <input type="submit" value="Create Account"  style="margin-block:50px;">
-</form>
+<div class="signup">
+    <h1>Create An Account</h1>
+    <form method="post" action="">{% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Create Account" style="margin-block:25px;">
+    </form>
+</div>
 
 {% endblock content %}
