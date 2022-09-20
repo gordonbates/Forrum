@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'tinymce',
     'hitcount',
     'taggit',
+    'register',
 ]
 
 MIDDLEWARE = [
