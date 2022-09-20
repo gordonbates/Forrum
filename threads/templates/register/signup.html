@@ -3,7 +3,8 @@
 {% block content %}
 
 
-<div class="signup">
+
+<div class="signup" style="background-color: #c5d86d;">
     <h1>Create An Account</h1>
     <form method="post" action="">{% csrf_token %}
         {{form|crispy}}

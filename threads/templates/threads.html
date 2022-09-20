@@ -20,12 +20,12 @@
 
         {% for post in posts %}
         <div class="table-row">
-            <div class="status"><i class="fab fa-rocketchat"></i></div>
+            <div class="status"><i class="fas fa-house-user"></i></div>
             <div class="subjects"><a href="{{post.get_url}}">{{post.title}}</a>
                 <br>
                 <span>Started by <b><a href="">{{post.user.fullname|title}}</a></b>.</span></div>
             <div class="replies">
-                {{post.num_comments}} comments <br>{% get_hit_count for post %}
+                {{post.num_comments}} comments <br> {% get_hit_count for post %}
             </div>
             <div class="last-post">
                 on {{post.last_reply.date|date}}
