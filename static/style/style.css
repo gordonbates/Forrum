@@ -405,6 +405,11 @@ header {
     box-shadow: 1px 2px 3px #63666A;
 }
 
+.author img {
+    border: 1.5px solid #f05d23;
+    border-radius: 50%;
+}
+
 /* ************************ Comment Section */
 
 .hide {

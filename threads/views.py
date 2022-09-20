@@ -34,6 +34,7 @@ def category(request, category_id):
 
     context = {
         "posts": posts,
+        "forums": category,
     }
 
     return render(request, 'threads.html', context)

@@ -6,7 +6,7 @@
 
     <!-- Navigation -->
     <div class="navigate">
-        <span> 
+        <span>
             <a href="{% url 'home' %}">Threads</a> >>
             <a href="{{post.categories.all.0.get_url}}">{{post.categories.all.0}} </a> >>
             <a href="{{post.get_url}}">{{post.title}}</a>
@@ -61,12 +61,8 @@
     {% endif %}
 
     <!-- Comments Section -->
+    {% for commnent in post.comments.all %}
     <div class="comments-container">
-        <!-- <div class="head">
-            <div class="author">Author</div>
-            <div class="content">Comments</div>
-        </div> -->
-
         <div class="body">
             <div class="author">
                 <div class="username"><a href="">{{comment.user.fullname|title}}</a></div>
@@ -115,6 +111,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
     {% endfor %}
 
 </div>

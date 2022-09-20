@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 {% load hitcount_tags %}
 {% block content %}
-
 <div class="container">
-
     <!-- Navigation -->
     <div class="navigate">
         <span>
-            <a href="">Forrum</a> >> 
-            <a href="">Room</a>
+            <a href="{% url 'home' %}">Forrum</a> >>
+            <a href="{{forum.get_url}}">{{forum.title}}</a>
         </span>
     </div>
 
@@ -27,12 +25,12 @@
                 <br>
                 <span>Started by <b><a href="">{{post.user.fullname|title}}</a></b>.</span></div>
             <div class="replies">
-                2 replies <br>{% get_hit_count for post %}
+                {{post.num_comments}} comments <br>{% get_hit_count for post %}
             </div>
             <div class="last-post">
-                on 01 Jan 2022
+                on {{post.last_reply.date|date}}
                 <br>
-                By <b><a href="#">SiteUser</a></b>
+                By <b><a href="#">{{post.last_reply.user.fullname|title}}</a></b>
             </div>
         </div>
         {% empty %}
