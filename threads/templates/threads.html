@@ -6,7 +6,10 @@
 
     <!-- Navigation -->
     <div class="navigate">
-        <span><a href="">Forrum - Forums</a> >> <a href="">Random Thread</a></span>
+        <span>
+            <a href="">Forrum</a> >> 
+            <a href="">Room</a>
+        </span>
     </div>
 
     <div class="posts-table">
@@ -33,7 +36,8 @@
             </div>
         </div>
         {% empty %}
-        Nothing yet
+        <div class="empty-tag"> Nothing to see here yet 🥹
+        </div>
         {% endfor %}
 
     </div>

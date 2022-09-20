@@ -5,7 +5,7 @@
 <div class="container">
     <div class="subtread">
         <div class="subtread-title">
-            <h1>Topic</h1>
+            <h1>Rooms</h1>
         </div>
 
         {% for forum in forums %}
@@ -15,16 +15,15 @@
             </div>
             <div class="subtread-discription subtread-column">
                 <h1><a href="{% url 'category' category_id=forum.slug %}">{{forum.title}}</a></h1>
-                <p>Description Content: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p>Room</p>
             </div>
             <div class="subtread-stats subtread-column center-icon">
-                <span>12 Posts | {{ forum.post_count }} Topics</span>
+                <span>{{forum.post_count}} Topics</span>
             </div>
             <div class="subtread-info subtread-column">
-                <a href="">Last Post</a> by <a href="">SiteUser</a>
+                <a href="{% url 'category' category_id=forum.slug %}">Last Post</a> by <a href="">{{forum.last_post.user.fullname|title}}</a>
                 <br>
-                0n <small>01 Jan 2022</small>
+                0n <small>{{forum.last_post.date|date}}</small>
             </div>
         </div>
 

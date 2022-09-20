@@ -11,7 +11,7 @@ def home(request):
     forums = Category.objects.all()
     for forum in forums:
         forum.post_count = Post.objects.filter(categories=forum.id).count()
-    
+
     context = {
         "forums": forums,
     }

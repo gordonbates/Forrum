@@ -38,13 +38,15 @@ class Category(models.Model):
     def __str__(self):
         return str(self.title)
 
+    @property
+    def num_posts(self):
+        return Post.objects.filter(categories=self).count()
 
-def save(self, *args, **kwargs):
-    if not self.slug:
-        self.slug = slugify(self.title)
-    super(Category, self).save(*args, **kwargs)
+    @property
+    def last_post(self):
+        return Post.objects.filter(categories=self).latest("date")
 
-
+      
 class Post(models.Model):
     title = models.CharField(max_length=400)
     slug = models.SlugField(max_length=400, unique=True, blank=True)
