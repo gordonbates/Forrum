@@ -1,5 +1,5 @@
 from django import forms
-from main.models import Author
+from threads.models import Author
 
 class UpdateForm(forms.ModelForm):
     

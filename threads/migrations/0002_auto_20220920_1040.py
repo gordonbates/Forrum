@@ -14,11 +14,14 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='categories',
-            field=models.ManyToManyField(related_name='posts', to='threads.Category'),
+            field=models.ManyToManyField(related_name='posts',
+            to='threads.Category'),
         ),
         migrations.AlterField(
             model_name='post',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts', to='threads.author'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='posts', to='threads.author'),
         ),
     ]
