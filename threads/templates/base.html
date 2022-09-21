@@ -49,12 +49,14 @@
 
         <!-- Search Bar Section -->
         <div class="search-bar">
-            <div>
+            <div class="postbut">
                 {% if user.is_authenticated %}
+                
                 <button type="submit" name="post">
                     <a href="{% url 'create_post' %}">
                         <i class="fas fa-edit"></i>Create Post
                     </a>
+                
                 </button>
                 {% endif %}
                 <select name="" id="">

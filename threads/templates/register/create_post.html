@@ -2,9 +2,9 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h1 style="text-align:center; margin-block:50px; color: #f05d23;">Hey {{user}}, Post Something!</h1>
+<h1 style="font-size: 24px; text-align:center; margin-block:50px; color: #261c15">Hey {{user}}, create a post!</h1>
 
-<form method="post" enctype="multipart/form-data" style="margin-left: 35%;margin-bottom: 50%;">{% csrf_token %}    
+<form method="post" enctype="multipart/form-data" style="text-align: center; margin-bottom: 8%;">{% csrf_token %}    
     {{form|crispy}}
     <input type="submit" value="Save"  style="margin-block:50px;">
 </form>

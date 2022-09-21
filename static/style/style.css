@@ -18,7 +18,7 @@ html {
 }
 
 a {
-    font-weight: bolder;
+    /* font-weight: bolder; */
     text-decoration: none;
     color: #f05d23;
 }
@@ -93,10 +93,6 @@ footer {
 .subtread-logo i {
     font-size: 25px;
     color: #261c15;
-}
-
-.sign-up {
-    border: 1px solid red;
 }
 
 
@@ -188,8 +184,7 @@ footer {
     margin-top: 20px;
     padding: 20px;
     display: flex;
-    width: 50vw;
-    margin-left: 35%
+    margin-left: 32%;
 }
 
 .search-bar select {
@@ -218,10 +213,10 @@ footer {
 }
 
 .search-bar button:hover {
-    background-color: #eae6c3;
-    box-shadow: 1px 2px 3px #fff;
+    background-color: #f05d230b;
     cursor: pointer;
 }
+
 
 /* ******************************* */
 /* ************************ threads.html */
@@ -458,7 +453,7 @@ footer {
 }
 
 
-/* ******************************* */
+/* **********  Special  ********** */
 /* ************************ Register forms */
 
 .signup {
@@ -484,7 +479,7 @@ input[type="text"i] {
 input[type="submit"i] {
     border: none;
     border-radius: 5px;
-    box-shadow: 1px 2px 3px #63666A;;
+    box-shadow: 1px 2px 3px #63666A;
     background-color: #f7f7f2;
     cursor: pointer;
 }
@@ -495,6 +490,21 @@ input[type="submit"i]:hover {
     box-shadow: none;
 }
 
+element.style {
+    color: #c5d86d;
+}
+
+.tinymce {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #63666A;
+}
+
+.selectmultiple {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #63666A;
+}
 
 /* ******************************* */
 /* ************************ Media Queries */
@@ -565,13 +575,37 @@ input[type="submit"i]:hover {
     }
 }
 
+/* ************************ samsung note 20 ultra */
+@media screen and (max-width: 412px) {
+    .nav-item a {
+        margin-inline: 2px;
+        font-size: 14px;
+        padding: 1px;
+    }
+
+    .search-bar {
+        margin-left: 55px;
+    }
+
+    /* .search-bar select,
+    .search-bar input,
+    .search-bar button {
+        min-width: 220px;
+        margin: 5px;
+    } */
+}
+
 
 /* ************************ iphone 12 pro */
 @media screen and (max-width: 390px) {
     .nav-item a {
         margin-inline: 2px;
-        font-size: 8px;
+        font-size: 12px;
         padding: 1px;
+    }
+
+    .search-bar {
+        margin-left: 55px;
     }
 
     .search-bar select,
