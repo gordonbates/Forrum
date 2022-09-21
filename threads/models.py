@@ -26,7 +26,7 @@ class Author(models.Model):
         if not self.slug:
             self.slug = slugify(self.fullname)
         super(Author, self).save(*args, **kwargs)
-    
+ 
 
 class Category(models.Model):
     title = models.CharField(max_length=50)
@@ -41,6 +41,7 @@ class Category(models.Model):
     @property
     def last_post(self):
         return Post.objects.filter(categories=self).latest("date")
+
 
 class Reply(models.Model):
     user = models.ForeignKey(Author, on_delete=models.CASCADE)
@@ -63,7 +64,7 @@ class Comment(models.Model):
     def __str__(self):
         return self.content[:100]
 
-      
+
 class Post(models.Model):
     title = models.CharField(max_length=400)
     slug = models.SlugField(max_length=400, unique=True, blank=True)

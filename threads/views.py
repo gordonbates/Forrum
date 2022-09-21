@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Author, Category, Post
+from .models import Author, Category, Post, Comment, Reply
 from .utils import update_views
+from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -38,3 +40,20 @@ def category(request, category_id):
     }
 
     return render(request, 'threads.html', context)
+
+@login_required
+def create_post(request):
+    context = {}
+    form = PostForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            author = Author.objects.get(user=request.user)
+            new_post = form.save(commit=False)
+            new_post.user = author
+            new_post.save()
+            return redirect("home")
+    context.update({
+        "form": form,
+        "title": "Create New Post"
+    })
+    return render(request, "register/create_post.html", context)
