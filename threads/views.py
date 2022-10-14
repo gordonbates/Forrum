@@ -3,7 +3,8 @@ from .models import Author, Category, Post, Comment, Reply
 from .utils import update_views
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
-
+from register.forms import UpdateForm
+from django.contrib.auth import logout as lt
 # Create your views here.
 
 # from django.http import HttpResponse
@@ -57,3 +58,8 @@ def create_post(request):
         "title": "Create New Post"
     })
     return render(request, "register/create_post.html", context)
+
+@login_required
+def logout(request):
+    lt(request)
+    return redirect("home")
